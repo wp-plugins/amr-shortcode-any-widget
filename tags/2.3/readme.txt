@@ -72,80 +72,7 @@ If you liked this plugin, you might also like my other plugins:
 [icalevents.com](http://icalevents.com) - a ics compliant events plugin fully integrated with wordpress, so it will work with many other plugins (seo, maps, social)
 [wpusersplugin.com](http://wpusersplugin.com) - a suite of plugins to help with membership sites. Major plugin is [amr users](http://wordpress.org/extend/plugins/amr-users/)
 
-
-
-== Changelog ==
-= Version 2.3 =
-*  Fixed some widget area class options that were not working.
-*  Added a widget area debug option to make it easier to find how your theme has stored it's widget area / sidebar ids.  They are not always easy to find.
-*  Tested on 3.9.1
-*  Updated readme
-
-= Version 2.2 =
-*  Attempt to add more styling control.  
-*  Add widget_classes=none to reverse out widget type class.  NOte to totally override wordpress widget 
-*  Add widget_area_class=none
-
-= Version 2.1 =
-* Bug Fix - last sidebar registered by theme was being overwritten by the attempt to copy the themes sidebar arguments so that cleverly (hopefully) the shortcode widgets would pick up the same styling.  Fixed now.  Now it really does pickup the first sidebars styling - with devasting consquence in twenty-fourteen theme - yes white text on white background is not fun to read.  But on other themes it works a treat.
-
-
-= Version 2 =
-* Shortcode widget id changed so that wordpress will save the shortcode settings per theme.  
-* Added Code to auto upgrade, but just in case please check your widgets page.  Look at the inactive widgets if the widgets are not in your widgets for shortcodes sidebar.
-* Logic added on theme switching to save shortcode widget settings and restore them after the theme switch, so you can play with themes and not have to set up your widgets again.  WP kept putting them into an 'inactive sidebar'.
-* Added, as requested by a few of you, the ability to add a class and control the html around the widget without having to enter html around the shortcode has been added.  See the settings page for instructions.
-* Added the ability to specify what html should be used for the title and the widget wrap, so that you can more easily either match your theme or get away from your thesmes widget styling.
-* Added ability to insert a whole widget area into the page.  The default will be the "widgets for shortcode" sidebar/widget area.  You can specify others.  Note Specifying other widget areas may be theme dependent, ie: switch and you'll lose that page.
-* Added classes amr-widget and amr-widget-area so one can target the widgets in the page to adjust css.
-
-= Version 1.8 =
-*  Whoops - had renamed the main file and forgot to delete it from the svn. Forcing a version number change to ensure files get cleaned up for everyone
-
-= Version 1.7 =
-*  Change: Changed so that debugs and debug prompt will only show to a logged in administrator.
-
-= Version 1.6 =
-*  Add: added a settings page to help people out (not really settings)
-*  Fix: changed a clashing function name
-
-= Version 1.5 =
-*  Fixed: a small bug which caused a warning if you had not saved the widgets in your shortcode sidebar
-
-= Version 1.4 =
-*  Updated readme - made very detailed steps and added some screen shots.
-*  Tested on wp 3.3.1 and fixed some notices when bad parameters entered. 
-
-= Version 1.3 =
-*  Added debug link and retested. Added readme.
-
-= 1.12 =
-*  Changed dummy shortcode sidebar so it appears after the theme sidebars to avoid taking over their widgets (this happened in numbered sidebars)  PLEASE note if you have upgraded,  you may appear to have "lost" your widgets due to this sidebar change.  You have not - they will be in your "inactive widgets" - please drag them to the new sidebar.  You may also find that you have 2 versions of the plugin, with slightly different folder names.  This will allow you to go back to the previous one to check what you had there if you need to.  Deactivate the old one and activate the new one.  Move your widgets back in.  Test then Delete the old one.    In one theme it also appeared that somehow due to this change, one of the sidebar widgets "moved" down to another sidebar.  I think that this may have had something to do with the fact that sidebars can be numbered or named, so please check all your sidebars before continuing.   As always make sure thath you know how to restore from a backup before doing any upgrades of any kind.
-*  Tested in 2.9.2, can still use either the widget name "Categories" or id=categories-6.  Note widget must have been created in the dummy shortcode sidebar.
-
-= 1.1 =
-
-*  Allow for lowercase use of widget names for the those challenged by attention to detail!
-*  Cleaned up debug mode to make it easier for people to identify which instance of a widget they are using.  Add &do_widget_debug to url string.
-
-= 1.0 =
-*  Launch of the plugin
-
-== Installation ==
-
-0. Activate plugin
-1. Goto Appearance > widgets and find "shortcode" sidebar
-1. Drag chosen widgets to shortcodes sidebar. Save. (note the names)
-2. Add [do_widget widgetname] in a page or post  or [do_widget_area]
-3. If it fails, it will offer a debug prompt to logged-in admin, click on the debug prompt and look for the id of your widget, use that.
-4. To force a debug anyway without waiting for an error, then be logged in as admin and on the page where you have a [do_widget something] shortcode, add  ?do_widget_debug=1  to the url , hit enter and look for the list of widget ids that are in the widgets_for_shortcode sidebar.
-
-Or  can use [do_widget widgetname] within the text in the page and save.  If the widget name has a space in it, use [do_widget "widget name"].
-
-If you use a widget more than once for different shortcodes, you can use the widget id to isolate which widget instance (and of course associated settings to use).  ie: [do_widget id=categories-6]  
-For detailed instructions on shortcodes and their parameters, see the [home page](http://wordpress.org/plugins/amr-shortcode-any-widget/)
- 
-== FAQ ==
+== Frequently Asked Questions ==
 
 ** How to identify widget **
 To identify your widget in the shortcode, use a safe constant identfier like the NAME or the ID.
@@ -238,6 +165,79 @@ More info on background: http://wordpress.org/support/topic/your-theme-your-side
  
 ** Widget help, the widget is doing this, when it should do that ** 
 http://wordpress.org/support/topic/widget-help-settings-functioning-etc?replies=1
+
+== Changelog ==
+= Version 2.3 =
+*  Fixed some widget area class options that were not working.
+*  Added a widget area debug option to make it easier to find how your theme has stored it's widget area / sidebar ids.  They are not always easy to find.
+*  Tested on 3.9.1
+*  Updated readme
+
+= Version 2.2 =
+*  Attempt to add more styling control.  
+*  Add widget_classes=none to reverse out widget type class.  NOte to totally override wordpress widget 
+*  Add widget_area_class=none
+
+= Version 2.1 =
+* Bug Fix - last sidebar registered by theme was being overwritten by the attempt to copy the themes sidebar arguments so that cleverly (hopefully) the shortcode widgets would pick up the same styling.  Fixed now.  Now it really does pickup the first sidebars styling - with devasting consquence in twenty-fourteen theme - yes white text on white background is not fun to read.  But on other themes it works a treat.
+
+
+= Version 2 =
+* Shortcode widget id changed so that wordpress will save the shortcode settings per theme.  
+* Added Code to auto upgrade, but just in case please check your widgets page.  Look at the inactive widgets if the widgets are not in your widgets for shortcodes sidebar.
+* Logic added on theme switching to save shortcode widget settings and restore them after the theme switch, so you can play with themes and not have to set up your widgets again.  WP kept putting them into an 'inactive sidebar'.
+* Added, as requested by a few of you, the ability to add a class and control the html around the widget without having to enter html around the shortcode has been added.  See the settings page for instructions.
+* Added the ability to specify what html should be used for the title and the widget wrap, so that you can more easily either match your theme or get away from your thesmes widget styling.
+* Added ability to insert a whole widget area into the page.  The default will be the "widgets for shortcode" sidebar/widget area.  You can specify others.  Note Specifying other widget areas may be theme dependent, ie: switch and you'll lose that page.
+* Added classes amr-widget and amr-widget-area so one can target the widgets in the page to adjust css.
+
+= Version 1.8 =
+*  Whoops - had renamed the main file and forgot to delete it from the svn. Forcing a version number change to ensure files get cleaned up for everyone
+
+= Version 1.7 =
+*  Change: Changed so that debugs and debug prompt will only show to a logged in administrator.
+
+= Version 1.6 =
+*  Add: added a settings page to help people out (not really settings)
+*  Fix: changed a clashing function name
+
+= Version 1.5 =
+*  Fixed: a small bug which caused a warning if you had not saved the widgets in your shortcode sidebar
+
+= Version 1.4 =
+*  Updated readme - made very detailed steps and added some screen shots.
+*  Tested on wp 3.3.1 and fixed some notices when bad parameters entered. 
+
+= Version 1.3 =
+*  Added debug link and retested. Added readme.
+
+= 1.12 =
+*  Changed dummy shortcode sidebar so it appears after the theme sidebars to avoid taking over their widgets (this happened in numbered sidebars)  PLEASE note if you have upgraded,  you may appear to have "lost" your widgets due to this sidebar change.  You have not - they will be in your "inactive widgets" - please drag them to the new sidebar.  You may also find that you have 2 versions of the plugin, with slightly different folder names.  This will allow you to go back to the previous one to check what you had there if you need to.  Deactivate the old one and activate the new one.  Move your widgets back in.  Test then Delete the old one.    In one theme it also appeared that somehow due to this change, one of the sidebar widgets "moved" down to another sidebar.  I think that this may have had something to do with the fact that sidebars can be numbered or named, so please check all your sidebars before continuing.   As always make sure thath you know how to restore from a backup before doing any upgrades of any kind.
+*  Tested in 2.9.2, can still use either the widget name "Categories" or id=categories-6.  Note widget must have been created in the dummy shortcode sidebar.
+
+= 1.1 =
+
+*  Allow for lowercase use of widget names for the those challenged by attention to detail!
+*  Cleaned up debug mode to make it easier for people to identify which instance of a widget they are using.  Add &do_widget_debug to url string.
+
+= 1.0 =
+*  Launch of the plugin
+
+== Installation ==
+
+0. Activate plugin
+1. Goto Appearance > widgets and find "shortcode" sidebar
+1. Drag chosen widgets to shortcodes sidebar. Save. (note the names)
+2. Add [do_widget widgetname] in a page or post  or [do_widget_area]
+3. If it fails, it will offer a debug prompt to logged-in admin, click on the debug prompt and look for the id of your widget, use that.
+4. To force a debug anyway without waiting for an error, then be logged in as admin and on the page where you have a [do_widget something] shortcode, add  ?do_widget_debug=1  to the url , hit enter and look for the list of widget ids that are in the widgets_for_shortcode sidebar.
+
+Or  can use [do_widget widgetname] within the text in the page and save.  If the widget name has a space in it, use [do_widget "widget name"].
+
+If you use a widget more than once for different shortcodes, you can use the widget id to isolate which widget instance (and of course associated settings to use).  ie: [do_widget id=categories-6]  
+For detailed instructions on shortcodes and their parameters, see the [home page](http://wordpress.org/plugins/amr-shortcode-any-widget/)
+ 
+
 
 == Screenshots ==
 
