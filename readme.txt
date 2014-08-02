@@ -74,7 +74,14 @@ If you liked this plugin, you might also like my other plugins:
 
 == Frequently Asked Questions ==
 
-** How to identify widget **
+**Widget help, the widget is doing this, when it should do that** 
+
+Please see
+http://wordpress.org/support/topic/widget-help-settings-functioning-etc?replies=1
+
+
+**How to identify widget**
+
 To identify your widget in the shortcode, use a safe constant identfier like the NAME or the ID.
 
 The name is the generic NAME like "tag cloud".  It is NOT your unique title eg: "Amazing Cloud Of Keywords" which you might change one day while procrastinating about doing real work, idly decide looks a bit twee and change to "Cloud of tags". That would break the do_widget shortcode and it would not find your widget (if that was the way it worked).
@@ -109,7 +116,8 @@ tag-cloud-2
 
 More info here: http://wordpress.org/support/topic/ids-and-multiple-instances-of-widget?replies=2
 
-**Styling, your theme, css, overriding **
+
+**Styling, your theme, css, overriding**
 
 Check your styling.  The effects are very dependent on how your theme has specified the css that may apply to widgets and sidebars/widget areas.  It may work beautifully and have the content looking like it belongs with your theme.
 You may have undesired effects applying that do not work in the main content area.
@@ -163,8 +171,7 @@ If you only using widget, maybe inserting the whole sidebar or widgertarea would
 [do_widget_area]
 More info on background: http://wordpress.org/support/topic/your-theme-your-sidebars-and-the-plugin-overriding?replies=10
  
-** Widget help, the widget is doing this, when it should do that ** 
-http://wordpress.org/support/topic/widget-help-settings-functioning-etc?replies=1
+
 
 == Changelog ==
 = Version 2.3 =
