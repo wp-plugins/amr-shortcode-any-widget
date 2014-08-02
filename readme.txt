@@ -6,11 +6,11 @@ Version: 2.3
 Stable tag: trunk
 
 == Description ==
-Insert separate widgets or a entire widget area (sidebar) into a page using a shortcode. 
+Insert a widget or multiple widgets or a entire widget area (sidebar) into a page using a shortcode. 
 
-The Widgets settings are specified in a specially created "widgets for shortcode" sidebar, just like you normally setuop a widget.
+The Widget settings are specified in a specially created sidebar called "widgets for shortcode".  This means you have the full widget settings avaiabled just like you normally setup a widget..  Setup th ewidgte first in a normal sidebar, then drag it into the widgets sidebar.  These settings will be saved even if you change your theme. The widgets for shortcode sidebar will remember it self and recreate itself if you change themes.
 
-The Plugin will call that widget instance from the do_widget shortcode, or the chosen sidebar from the do_widget_area shortcode. 
+You can reference a specific widget instance from the do_widget shortcode, or the chosen sidebar from the do_widget_area shortcode. 
 
 For example: You could use the query posts widget in the page to create a archive within a page, or the rss widget to list feed content from other sites.  For more details see [anmari.com](http://webdesign.anmari.com/category/plugins/shortcode-any-widget/)
 
