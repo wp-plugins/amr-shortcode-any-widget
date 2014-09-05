@@ -1,14 +1,14 @@
 === amr shortcode any widget ===
 Contributors: anmari
 Tags: shortcode, widget, page, templates, page template, widget_area, sidebar
-Tested up to: 3.9.1
+Tested up to: 4.0
 Version: 2.3
 Stable tag: trunk
 
 == Description ==
 Insert a widget or multiple widgets or a entire widget area (sidebar) into a page using a shortcode. 
 
-The Widget settings are specified in a specially created sidebar called "widgets for shortcode".  This means you have the full widget settings avaiabled just like you normally setup a widget..  Setup th ewidgte first in a normal sidebar, then drag it into the widgets sidebar.  These settings will be saved even if you change your theme. The widgets for shortcode sidebar will remember it self and recreate itself if you change themes.
+The Widget settings are specified in a specially created sidebar called "widgets for shortcode".  This means you have the full widget settings avaiabled just like you normally setup a widget..  Setup the widget first in a normal sidebar, then drag it into the widgets sidebar.  These settings will be saved even if you change your theme. The widgets for shortcode sidebar will remember it self and recreate itself if you change themes.
 
 You can reference a specific widget instance from the do_widget shortcode, or the chosen sidebar from the do_widget_area shortcode. 
 
