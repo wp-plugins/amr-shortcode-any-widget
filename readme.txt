@@ -1,7 +1,7 @@
 === amr shortcode any widget ===
 Contributors: anmari
 Tags: shortcode, widget, page, templates, page template, widget_area, sidebar
-Tested up to: 4.2
+Tested up to: 4.3
 Version: 2.6
 Stable tag: trunk
 
