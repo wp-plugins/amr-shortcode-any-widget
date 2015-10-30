@@ -4,7 +4,7 @@ Plugin Name: amr shortcode any widget
 Plugin URI: http://webdesign.anmari.com/shortcode-any-widget/
 Description: Include any widget in a page for any theme.  [do_widget widgetname ] or  [do_widget "widget name" ] [do_widget id=widgetnamedashed-n ]or include a whole widget area [do_widget_area]. Please read: <a href="https://wordpress.org/plugins/amr-shortcode-any-widget/installation/">Installation</a> and <a href="https://wordpress.org/plugins/amr-shortcode-any-widget/faq/">FAQ</a>.
 Author: anmari
-Version: 2.6
+Version: 2.8
 Author URI: http://webdesign.anmari.com
 
 */
@@ -36,7 +36,11 @@ global $wp_registered_widgets, $_wp_sidebars_widgets, $wp_registered_sidebars;
 
 	), $atts));
 
-
+	if (!empty($atts)) {
+		if (($widget_area == 'widgets_for_shortcodes' ) and !empty($atts[0]))  
+			$widget_area = $atts[0];
+	}
+	
 	if (empty ($wp_registered_sidebars[$widget_area])) {
 		echo '<br/>Widget area "'.$widget_area.'" not found. Registered widget areas (sidebars) are: <br/>';
 		foreach ($wp_registered_sidebars as $area=> $sidebar) echo $area.'<br />';
@@ -143,6 +147,7 @@ if it is in, then get the instance  data and use that */
 	if ((!isset ($_wp_sidebars_widgets[$sidebarid])) or (empty ($_wp_sidebars_widgets[$sidebarid]))) { // try upgrade
 		amr_upgrade_sidebar();
 	}
+
 	
 	if ((isset ($_wp_sidebars_widgets[$sidebarid])) and (!empty ($_wp_sidebars_widgets[$sidebarid]))) {
 /*		if ($debug) { 
@@ -164,17 +169,23 @@ if it is in, then get the instance  data and use that */
 */			
 	}
 		else { /* the sidebar is not defined */
-			//if ($debug) {
-			echo '<br /><a href="" title="Error: Sidebar '.$sidebar.' with sidebarid '.$sidebarid.' is empty (no widgets) or is not defined.">!</a><br />'; 
-			//}
+			
+			if (isset($debug)) {  // only do this in debug mode
+				if (!isset($_wp_sidebars_widgets[$sidebarid]))
+					echo '<br /><a href="" title="Error: Sidebar '.$sidebar.' with sidebarid '.$sidebarid.' is not defined.">!</a><br />'; 
+				 // shouldnt happen - maybe someone running content filters on save
+				else 
+					echo '<br /><a href="" title="Error: Sidebar '.$sidebar.' with sidebarid '.$sidebarid.' is empty (no widgets)">!</a><br />'; 
+			}
+			
 		}
 	
 	$output = '';
 	if (empty ($wid) or (!is_array($wid)) or (count($wid) < 1)) { 
-		//if ($debug) {	
+
 		echo '<br /><a href="" title="Error: Your requested Widget '.$widget.' is not in the '.$sidebar.' sidebar ">!</a><br />';
 		amr_show_widget_debug('empty', $atts);
-		//}
+
 		unset($sidebar); 
 		unset($sidebarid);
 
@@ -356,4 +367,5 @@ function add_action_links ( $links ) {
  );
 return array_merge( $links, $mylinks );
 }
+
 ?>
