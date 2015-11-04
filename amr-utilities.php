@@ -62,7 +62,7 @@ global $wp_registered_sidebars, $wp_registered_widgets, $_wp_sidebars_widgets, $
 	if ($type=='empty') {
 		if (!$debug and current_user_can('administrator')) 
 			
-			echo '<br/>Problem? Have you read <a title="Detailed help on how to use this plugin" ref="https://wordpress.org/plugins/amr-shortcode-any-widget/installation/">this</a> carefully?<br />';	
+			echo '<br/>Problem? Have you read <a title="Detailed help on how to use this plugin" href="https://wordpress.org/plugins/amr-shortcode-any-widget/installation/">this</a> carefully?<br />';	
 			echo '<br /> You are admin: <a href="'.esc_url(add_query_arg('do_widget_debug','1')).'">Click here to try debug </a></b>'
 			.'(or eee a exclamation point ! above ?.  Hover over to see error message.)'
 			.'</p>'; 

@@ -2,7 +2,7 @@
 Contributors: anmari
 Tags: shortcode, widget, page, templates, page template, widget_area, sidebar
 Tested up to: 4.3
-Version: 2.8
+Version: 2.9
 Stable tag: trunk
 
 == Description ==
@@ -194,6 +194,9 @@ More info on background: http://wordpress.org/support/topic/your-theme-your-side
 
 
 == Changelog ==
+= Version 2.9 =
+*  in debug help, the link to the installation page help was not properly setup. Fixed. 
+
 = Version 2.8 =
 *  Tested on 4.3.1
 *  No real functional change.
